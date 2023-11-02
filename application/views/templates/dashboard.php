@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title><?= $title; ?> | Aplikasi Sistem Anggaran</title>
+    <title><?= $title; ?> | Aplikasi Sistem Informasi Aset</title>
     <link rel="icon" href="<?= base_url('assets/img/xto.ico'); ?>">
 
     <!-- Custom fonts for this template-->
