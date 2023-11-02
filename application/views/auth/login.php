@@ -11,8 +11,8 @@
                     <div class="col-lg-6">
                         <div class="p-5">
                             <div class="text-center mb-4">
-                                <h1 class="h4 text-gray-900">Sistem Informasi Anggaran</h1>
-                            <h2 class="h4 text-gray-900">Yayasan Diannanda</h2>
+                                <h1 class="h4 text-gray-900">Sistem Informasi Aset</h1>
+                                <h2 class="h4 text-gray-900">Yayasan Diannanda</h2>
                                 <span class="text-muted">Login</span>
                             </div>
                             <?= $this->session->flashdata('pesan'); ?>
@@ -38,11 +38,11 @@
             </div>
         </div>
     </div>
-  
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span style="color:white;font-size:12px;">Copyright &copy; Sistem Informasi Anggaran | IT Yayasan Diannanda 2023</span>
-                    </div>
-                </div>
-           
+
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span style="color:white;font-size:12px;">Copyright &copy; Sistem Informasi Anggaran | IT Yayasan Diannanda 2023</span>
+        </div>
+    </div>
+
 </div>

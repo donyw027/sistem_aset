@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -32,11 +32,11 @@
             z-index: 1;
         }
     </style>
-    
+
 </head>
 
 <body id="page-top">
-<?php date_default_timezone_set("Asia/Jakarta"); ?>
+    <?php date_default_timezone_set("Asia/Jakarta"); ?>
 
 
 
@@ -50,12 +50,12 @@
             <a class="sidebar-brand d-flex text-white align-items-center bg-primary justify-content-center" href="">
                 <div class="sidebar-brand-icon">
                     <!-- <i class="fas fa-school"></i> -->
-                    <img src="<?= base_url('assets/img/xto.png'); ?>" width="65px" height="65px"  alt="" >
-                     
+                    <img src="<?= base_url('assets/img/xto.png'); ?>" width="65px" height="65px" alt="">
+
                 </div>
-                <div class="sidebar-brand-text mx-3">Sistem Anggaran</div>
+                <div class="sidebar-brand-text mx-3">Sistem Aset</div>
             </a>
-            
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('dashboard'); ?>">
@@ -63,9 +63,9 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            
 
-           
+
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -75,34 +75,55 @@
             </div>
 
             <!-- Nav Item - Dashboard -->
-            
+
+            <!-- <li class="nav-item">
+                <a class="nav-link pb-0" href="<?= base_url('indukcoa/lihatcoa'); ?>">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Master Merk</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link pb-0" href="<?= base_url('indukcoa/lihatcoa'); ?>">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Lihat Daftar Coa</span>
+                    <span>Master Kategori</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link pb-0" href="<?= base_url('indukcoa/lihatcoa'); ?>">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Master Unit</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link pb-0" href="<?= base_url('indukcoa/lihatcoa'); ?>">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Master Ruang</span>
+                </a>
+            </li><br> -->
 
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseMaster" aria-expanded="true" aria-controls="collapseMaster">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Input Coa</span>
+                    <span>Data Master</span>
                 </a>
                 <div id="collapseMaster" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-light py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Master Coa</h6>
-                        <a class="collapse-item" href="<?= base_url('indukcoa'); ?>">Induk Coa</a>
-                        <a class="collapse-item" href="<?= base_url('subcoa1'); ?>">Sub Coa 1</a>
-                        <a class="collapse-item" href="<?= base_url('subcoa2'); ?>">Sub Coa 2</a>
+                        <h6 class="collapse-header">Master Data</h6>
+                        <a class="collapse-item" href="<?= base_url('merk'); ?>">Merk</a>
+                        <a class="collapse-item" href="<?= base_url('kategori'); ?>">Kategori Aset</a>
+                        <a class="collapse-item" href="<?= base_url('lokasi'); ?>">Lokasi Aset</a>
+                        <a class="collapse-item" href="<?= base_url('ruang'); ?>">Ruang Aset</a>
+
                     </div>
                 </div>
             </li>
-            
+            <?php  ?>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
-            
+
             <!-- Heading -->
             <div class="sidebar-heading">
                 Transaksi
@@ -110,44 +131,44 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('inputsaldo'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('dataaset'); ?>">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Input Saldo</span>
+                    <span>Data Aset</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('realisasianggaran'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('disposalaset'); ?>">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Realisasi Anggaran</span>
+                    <span>Disposal Aset</span>
                 </a>
             </li>
             <br>
-            
-            <hr class="sidebar-divider">
+
+            <!-- <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 Reporting
             </div>
 
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('riwayattambah'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('laporanaset'); ?>">
                     <i class="fas fa-fw fa-print"></i>
-                    <span>Riwayat Tambah Saldo</span>
+                    <span>Report Data Aset</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('laporanrealisasi'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('laporandisposal'); ?>">
                     <i class="fas fa-fw fa-print"></i>
-                    <span>Hasil Realisasi</span>
+                    <span>Report Disposal Aset</span>
                 </a>
-            </li><br>
-           
-           
+            </li><br> -->
+
+
 
             <?php if (is_admin()) : ?>
-            
-            <hr class="sidebar-divider">
 
-            
+                <hr class="sidebar-divider">
+
+
 
                 <!-- Heading -->
                 <div class="sidebar-heading">
@@ -162,9 +183,9 @@
                     </a>
                 </li>
             <?php endif; ?>
-      
-           
-                
+
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -178,7 +199,7 @@
                 <img src="<?= base_url('assets/img/xto.png'); ?>" width="90px" height="90px"  alt="" >
             </div> -->
 
-            
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -320,9 +341,6 @@
     <script src="<?= base_url(); ?>assets/vendor/gijgo/js/gijgo.min.js"></script>
 
     <script type="text/javascript">
-        
-
-
         $(function() {
             $('.date').datepicker({
                 uiLibrary: 'bootstrap4',
@@ -398,7 +416,7 @@
             var table = $('#dataTable2').DataTable({
                 buttons: [],
                 dom: "<'row px-2 px-md-4 pt-2'<'col-md-3'l><'col-md-5 text-center'B><'col-md-4'f>>" +
-                    "<'row'<'col-md-12'tr>>" ,
+                    "<'row'<'col-md-12'tr>>",
                 lengthMenu: [
                     [25, 50, 100, -1],
                     [25, 50, 100, "All"]
@@ -417,7 +435,7 @@
             var table = $('#dataTable4').DataTable({
                 buttons: [],
                 dom: "<'row px-2 px-md-4 pt-2'<'col-md-3'l><'col-md-5 text-center'B><'col-md-4'f>>" +
-                    "<'row'<'col-md-11'tr>>" ,
+                    "<'row'<'col-md-11'tr>>",
                 lengthMenu: [
                     [5, 25, 50, 100, -1],
                     [5, 25, 50, 100, "All"]
@@ -438,7 +456,7 @@
         <!-- Chart -->
         <script src="<?= base_url(); ?>assets/vendor/chart.js/Chart.min.js"></script>
 
-        
+
     <?php endif; ?>
 </body>
 

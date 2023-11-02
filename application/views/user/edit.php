@@ -59,7 +59,7 @@
                             <input <?= $user['role'] == 'admin' ? 'checked' : ''; ?> <?= set_radio('role', 'admin'); ?> value="admin" type="radio" id="admin" name="role" class="custom-control-input">
                             <label class="custom-control-label" for="admin">Admin</label>
                         </div>
-                        <div class="custom-control custom-radio">
+                        <!-- <div class="custom-control custom-radio">
                             <input <?= $user['role'] == 'keuangan' ? 'checked' : ''; ?> <?= set_radio('role', 'keuangan'); ?> value="keuangan" type="radio" id="keuangan" name="role" class="custom-control-input">
                             <label class="custom-control-label" for="keuangan">Keuangan</label>
                         </div>
@@ -90,8 +90,8 @@
                         <div class="custom-control custom-radio">
                             <input <?= $user['role'] == 'yayasan' ? 'checked' : ''; ?> <?= set_radio('role', 'yayasan'); ?> value="yayasan" type="radio" id="yayasan" name="role" class="custom-control-input">
                             <label class="custom-control-label" for="yayasan">Yayasan</label>
-                        </div>
-                        
+                        </div> -->
+
                         <?= form_error('role', '<span class="text-danger small">', '</span>'); ?>
                     </div>
                 </div>
