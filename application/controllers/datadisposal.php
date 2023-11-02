@@ -15,21 +15,30 @@ class Datadisposal extends CI_Controller
         $this->load->library('form_validation');
     }
 
+    public function semuadisposal()
+    {
+        $data['title'] = "All Data Disposal";
+        $role = $this->session->userdata('login_session')['role'];
+
+
+        $data['datadisposal'] = $this->admin->get("tb_disposal");
+
+        $this->template->load('templates/dashboard', 'alldatadisposal/data', $data);
+    }
+
     public function index()
     {
         $data['title'] = "Data Disposal Aset";
         $role = $this->session->userdata('login_session')['role'];
 
         if (is_admin() == true) {
-            $lokasi = 'SMP 2';
+            $lokasi = 'Kantor Yayasan Diannanda';
             $keyword = $this->input->get('lokasi');
             if ($keyword) {
                 $lokasi = $keyword;
             }
             $data['lokasi'] = $this->admin->getlokasi();
-            $data['datadisposal'] = $this->admin->get("tb_disposal");
-            // var_dump($data['datadisposal'] , ['lokasi' => $lokasi]);
-            // die();
+            $data['datadisposal'] = $this->admin->get("tb_disposal", null, ['lokasi' => $lokasi]);
         } else {
             $data['lokasi'] = $this->admin->getlokasi();
             $data['datadisposal'] = $this->admin->get("tb_disposal");

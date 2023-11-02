@@ -17,33 +17,36 @@ class Dataaset extends CI_Controller
         $this->load->library('ciqrcode');
     }
 
-    public function index()
+    public function semuaaset()
     {
 
 
+        $data['title'] = "All Data Aset";
+        $role = $this->session->userdata('login_session')['role'];
+
+
+        $data['dataaset'] = $this->admin->get("tb_aset");
+
+        $this->template->load('templates/dashboard', 'alldataaset/data', $data);
+    }
+
+    public function index()
+    {
         $data['title'] = "Data Aset";
         $role = $this->session->userdata('login_session')['role'];
 
         if (is_admin() == true) {
-            $lokasi = 'Yayasan';
+            $lokasi = 'Kantor Yayasan Diannanda';
             $keyword = $this->input->get('lokasi');
             if ($keyword) {
                 $lokasi = $keyword;
             }
             $data['lokasi'] = $this->admin->getlokasi();
-            $data['dataaset'] = $this->admin->get("tb_aset");
-            // var_dump($data['dataaset'] , ['lokasi' => $lokasi]);
-            // die();
+            $data['dataaset'] = $this->admin->get("tb_aset", null, ['lokasi' => $lokasi]);
         } else {
             $data['lokasi'] = $this->admin->getlokasi();
             $data['dataaset'] = $this->admin->get("tb_aset");
         }
-
-
-
-
-
-
         $this->template->load('templates/dashboard', 'dataaset/data', $data);
     }
 
@@ -148,14 +151,28 @@ class Dataaset extends CI_Controller
 
     function qrcode($kodenya = null)
     {
-        qrcode::png(
+
+        // ob_start();
+        $returnData = qrcode::png(
             urldecode($kodenya),
             $outfiles = false,
             $level = QR_ECLEVEL_H,
             $size = 6,
             $margin = 1
         );
+        // $imageString = base64_encode(ob_get_contents());
+        // ob_end_clean();
+        // $str = "data:image/png;base64," . $imageString;
 
-        $this->load->view('dataaset/barcode', $kodenya);
+        // print_r('test');
+        // die();
+    }
+
+    function printqrcode($kodenya = null)
+    {
+        $urlgenerateqrcode = base_url('dataaset/qrcode/' . $kodenya);
+        $this->load->view('dataaset/barcode', [
+            'urlqrcode' => $urlgenerateqrcode
+        ]);
     }
 }

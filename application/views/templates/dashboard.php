@@ -144,23 +144,23 @@
             </li>
             <br>
 
-            <!-- <hr class="sidebar-divider">
+            <hr class="sidebar-divider">
             <div class="sidebar-heading">
                 Reporting
             </div>
 
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('laporanaset'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('dataaset/semuaaset'); ?>">
                     <i class="fas fa-fw fa-print"></i>
-                    <span>Report Data Aset</span>
+                    <span>All Data Aset</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('laporandisposal'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('datadisposal/semuadisposal'); ?>">
                     <i class="fas fa-fw fa-print"></i>
-                    <span>Report Disposal Aset</span>
+                    <span>All Disposal Aset</span>
                 </a>
-            </li><br> -->
+            </li><br>
 
 
 

@@ -79,10 +79,10 @@
              <div class="card-body">
                  <div class="row no-gutters align-items-center">
                      <div class="col mr-2">
-                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Data Jumlah Aset</div>
+                         <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">Data Jumlah Aset</div>
 
                          <div class="table-responsive">
-                             <table class="table" id="dataTable1">
+                             <table class="table" id="dataTable11">
                                  <thead>
                                      <tr>
                                          <th width="30">No.</th>
@@ -96,12 +96,13 @@
                                  <tbody>
                                      <?php
                                         $no = 1;
-                                        if ($kategori) :
-                                            foreach ($kategori as $kategorii) :
+                                        if ($kategoriaset) :
+                                            foreach ($kategoriaset as $kategorii) :
                                         ?>
                                              <tr>
                                                  <td><?= $no++; ?></td>
                                                  <td><?= $kategorii['kategori']; ?></td>
+                                                 <td><?= $kategorii['totalaset']; ?></td>
 
 
                                              </tr>
@@ -127,10 +128,10 @@
              <div class="card-body">
                  <div class="row no-gutters align-items-center">
                      <div class="col mr-2">
-                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Data Jumlah Disposal Aset</div>
+                         <div class="text-xl font-weight-bold text-primary text-uppercase mb-1">Data Jumlah Disposal Aset</div>
 
                          <div class="table-responsive">
-                             <table class="table" id="dataTable1">
+                             <table class="table" id="dataTable11">
                                  <thead>
                                      <tr>
                                          <th width="30">No.</th>
@@ -144,12 +145,14 @@
                                  <tbody>
                                      <?php
                                         $no = 1;
-                                        if ($kategori) :
-                                            foreach ($kategori as $kategorii) :
+                                        if ($kategoridisposal) :
+                                            foreach ($kategoridisposal as $kategorii) :
                                         ?>
                                              <tr>
                                                  <td><?= $no++; ?></td>
                                                  <td><?= $kategorii['kategori']; ?></td>
+                                                 <td><?= $kategorii['totalaset']; ?></td>
+
 
 
                                              </tr>
