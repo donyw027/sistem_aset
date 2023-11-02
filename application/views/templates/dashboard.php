@@ -137,7 +137,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link pb-0" href="<?= base_url('disposalaset'); ?>">
+                <a class="nav-link pb-0" href="<?= base_url('datadisposal'); ?>">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Disposal Aset</span>
                 </a>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dataaset extends CI_Controller
+class Datadisposal extends CI_Controller
 {
     public function __construct()
     {
@@ -13,38 +13,28 @@ class Dataaset extends CI_Controller
 
         $this->load->model('Admin_model', 'admin');
         $this->load->library('form_validation');
-
-        $this->load->library('ciqrcode');
     }
 
     public function index()
     {
-
-
-        $data['title'] = "Data Aset";
+        $data['title'] = "Data Disposal Aset";
         $role = $this->session->userdata('login_session')['role'];
 
         if (is_admin() == true) {
-            $lokasi = 'Yayasan';
+            $lokasi = 'SMP 2';
             $keyword = $this->input->get('lokasi');
             if ($keyword) {
                 $lokasi = $keyword;
             }
             $data['lokasi'] = $this->admin->getlokasi();
-            $data['dataaset'] = $this->admin->get("tb_aset");
-            // var_dump($data['dataaset'] , ['lokasi' => $lokasi]);
+            $data['datadisposal'] = $this->admin->get("tb_disposal");
+            // var_dump($data['datadisposal'] , ['lokasi' => $lokasi]);
             // die();
         } else {
             $data['lokasi'] = $this->admin->getlokasi();
-            $data['dataaset'] = $this->admin->get("tb_aset");
+            $data['datadisposal'] = $this->admin->get("tb_disposal");
         }
-
-
-
-
-
-
-        $this->template->load('templates/dashboard', 'dataaset/data', $data);
+        $this->template->load('templates/dashboard', 'datadisposal/data', $data);
     }
 
     private function _validasi($mode)
@@ -55,7 +45,7 @@ class Dataaset extends CI_Controller
             $this->form_validation->set_rules('nama_aset', 'nama_aset', 'required');
         } else {
 
-            $db = $this->admin->get('tb_aset', ['nama_aset' => $this->input->post('nama_aset', true)]);
+            $db = $this->admin->get('tb_disposal', ['nama_aset' => $this->input->post('nama_aset', true)]);
             $nama_aset = $this->input->post('nama_aset', true);
         }
     }
@@ -65,34 +55,34 @@ class Dataaset extends CI_Controller
         $this->_validasi('add');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Tambah Data Aset";
+            $data['title'] = "Tambah Data Disposal Aset";
             $data['merk'] = $this->admin->getmerk();
             $data['kategori'] = $this->admin->getkategori();
             $data['lokasi'] = $this->admin->getlokasi();
             $data['ruang'] = $this->admin->getruang();
 
-            $this->template->load('templates/dashboard', 'dataaset/add', $data);
+            $this->template->load('templates/dashboard', 'datadisposal/add', $data);
         } else {
             $input = $this->input->post(null, true);
             $input_data = [
+                'tgl_disposal'          => $input['tgl_disposal'],
                 'jenis_aset'          => $input['jenis_aset'],
                 'nama_aset'          => $input['nama_aset'],
                 'jumlah_unit'          => $input['jumlah_unit'],
                 'merk'      => $input['merk'],
-                'tgl_perolehan'         => $input['tgl_perolehan'],
-                'kondisi'       => $input['kondisi'],
+                'no_seri'         => $input['no_seri'],
                 'lokasi'       => $input['lokasi'],
                 'ruang'       => $input['ruang'],
                 'kategori'       => $input['kategori'],
                 'keterangan'       => $input['keterangan'],
             ];
 
-            if ($this->admin->insert('tb_aset', $input_data)) {
+            if ($this->admin->insert('tb_disposal', $input_data)) {
                 set_pesan('data berhasil disimpan.');
-                redirect('dataaset');
+                redirect('datadisposal');
             } else {
                 set_pesan('data gagal disimpan', false);
-                redirect('dataaset/add');
+                redirect('datadisposal/add');
             }
         }
     }
@@ -103,34 +93,37 @@ class Dataaset extends CI_Controller
         $this->_validasi('edit');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = "Edit Data Aset";
+            $data['title'] = "Edit Data Disposal Aset";
             $data['merk'] = $this->admin->getmerk();
             $data['kategori'] = $this->admin->getkategori();
             $data['lokasi'] = $this->admin->getlokasi();
             $data['ruang'] = $this->admin->getruang();
-            $data['dataaset'] = $this->admin->get('tb_aset', ['id' => $id]);
-            $this->template->load('templates/dashboard', 'dataaset/edit', $data);
+            $data['datadisposal'] = $this->admin->get('tb_disposal', ['id' => $id]);
+            $this->template->load('templates/dashboard', 'datadisposal/edit', $data);
         } else {
             $input = $this->input->post(null, true);
             $input_data = [
+                'tgl_disposal'          => $input['tgl_disposal'],
                 'jenis_aset'          => $input['jenis_aset'],
                 'nama_aset'          => $input['nama_aset'],
                 'jumlah_unit'          => $input['jumlah_unit'],
                 'merk'      => $input['merk'],
-                'tgl_perolehan'         => $input['tgl_perolehan'],
-                'kondisi'       => $input['kondisi'],
+                'no_seri'         => $input['no_seri'],
                 'lokasi'       => $input['lokasi'],
                 'ruang'       => $input['ruang'],
                 'kategori'       => $input['kategori'],
                 'keterangan'       => $input['keterangan'],
             ];
 
-            if ($this->admin->update('tb_aset', 'id', $id, $input_data)) {
+            // var_dump($input_data);
+            // die();
+
+            if ($this->admin->update('tb_disposal', 'id', $id, $input_data)) {
                 set_pesan('data berhasil diubah.');
-                redirect('dataaset');
+                redirect('datadisposal');
             } else {
                 set_pesan('data gagal diubah.', false);
-                redirect('dataaset/edit/' . $id);
+                redirect('datadisposal/edit/' . $id);
             }
         }
     }
@@ -138,24 +131,11 @@ class Dataaset extends CI_Controller
     public function delete($getId)
     {
         $id = encode_php_tags($getId);
-        if ($this->admin->delete('tb_aset', 'id', $id)) {
+        if ($this->admin->delete('tb_disposal', 'id', $id)) {
             set_pesan('data berhasil dihapus.');
         } else {
             set_pesan('data gagal dihapus.', false);
         }
-        redirect('dataaset');
-    }
-
-    function qrcode($kodenya = null)
-    {
-        qrcode::png(
-            urldecode($kodenya),
-            $outfiles = false,
-            $level = QR_ECLEVEL_H,
-            $size = 6,
-            $margin = 1
-        );
-
-        $this->load->view('dataaset/barcode', $kodenya);
+        redirect('datadisposal');
     }
 }

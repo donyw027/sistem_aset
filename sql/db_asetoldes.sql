@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2023 at 07:10 AM
+-- Generation Time: Nov 02, 2023 at 02:11 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -31,7 +31,7 @@ CREATE TABLE `tb_aset` (
   `id` int(11) NOT NULL,
   `jenis_aset` varchar(20) NOT NULL,
   `nama_aset` varchar(30) NOT NULL,
-  `jumlah_unit` int(11) NOT NULL,
+  `jumlah_unit` varchar(5) NOT NULL,
   `merk` varchar(20) NOT NULL,
   `tgl_perolehan` varchar(15) NOT NULL,
   `kondisi` varchar(15) NOT NULL,
@@ -46,9 +46,8 @@ CREATE TABLE `tb_aset` (
 --
 
 INSERT INTO `tb_aset` (`id`, `jenis_aset`, `nama_aset`, `jumlah_unit`, `merk`, `tgl_perolehan`, `kondisi`, `lokasi`, `ruang`, `kategori`, `keterangan`) VALUES
-(5, 'Tetap', 'TP LINK WIFI', 1, 'Tp Link', '2023-11-01', 'Baik', 'Kantor Yayasan Diannanda', 'Ruang Server', 'Elektronik', 'Ruang Server doni'),
-(6, 'Tetap', 'AC', 30, 'Daikin', '2023-11-02', 'Baik', 'SMA Kristoforus 1', 'Ruang Kelas', 'Gedung', 'AC'),
-(7, 'Tetap', 'Motor', 2, 'Supra', '2023-11-08', 'Baik', 'SMP Kristoforus 1', 'Ruang Sarpras', 'Kendaraan roda 2', 'Ada');
+(2, 's', 'ac', '1', 'Daikin', '19-09-2000', 'baik', 'SMP 2', 'kategorial', 'Elektronik', 'yahahah'),
+(3, 's', 'ac', '1', 'Daikin', '19-09-2000', 'baik', 'smp 3', 'kategorial', 'Elektronik', 'yahahah');
 
 -- --------------------------------------------------------
 
@@ -61,7 +60,7 @@ CREATE TABLE `tb_disposal` (
   `tgl_disposal` varchar(15) NOT NULL,
   `jenis_aset` varchar(20) NOT NULL,
   `nama_aset` varchar(20) NOT NULL,
-  `jumlah_unit` int(11) NOT NULL,
+  `jumlah_unit` varchar(5) NOT NULL,
   `merk` varchar(15) NOT NULL,
   `no_seri` varchar(20) DEFAULT NULL,
   `lokasi` varchar(30) NOT NULL,
@@ -69,14 +68,6 @@ CREATE TABLE `tb_disposal` (
   `kategori` varchar(30) NOT NULL,
   `keterangan` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_disposal`
---
-
-INSERT INTO `tb_disposal` (`id`, `tgl_disposal`, `jenis_aset`, `nama_aset`, `jumlah_unit`, `merk`, `no_seri`, `lokasi`, `ruang`, `kategori`, `keterangan`) VALUES
-(5, '2023-11-30', 'Tetap', 'TP Link', 5, 'Tp Link', '98DSJIAOAD', 'TK Kristoforus 2', 'Ruang TU', 'Perlengkapan', 'Lengkap\r\n'),
-(6, '2023-12-02', 'Tetap', 'Meja', 2, 'Asus', '-', 'Rumah 45', 'Ruang Lab', 'Perlengkapan', 'Rusak');
 
 -- --------------------------------------------------------
 
@@ -95,13 +86,7 @@ CREATE TABLE `tb_kategori` (
 
 INSERT INTO `tb_kategori` (`id`, `kategori`) VALUES
 (1, 'Elektronik'),
-(2, 'Perlengkapan'),
-(4, 'Furniture'),
-(5, 'Kendaraan roda 2'),
-(6, 'Kendaraan Roda 4'),
-(7, 'Tanah'),
-(8, 'Gedung'),
-(9, 'Alat Musik');
+(2, 'Elektronik');
 
 -- --------------------------------------------------------
 
@@ -119,17 +104,7 @@ CREATE TABLE `tb_lokasi` (
 --
 
 INSERT INTO `tb_lokasi` (`id`, `lokasi`) VALUES
-(1, 'TK Kristoforus 1'),
-(3, 'TK Kristoforus 2'),
-(4, 'SD Kristoforus 1'),
-(5, 'SD Kristoforus 2'),
-(6, 'SMP Kristoforus 1'),
-(7, 'SMP Kristoforus 2'),
-(8, 'SMA Kristoforus 1'),
-(9, 'SMA Kristoforus 2'),
-(10, 'R Kategorial'),
-(11, 'Kantor Yayasan Diannanda'),
-(12, 'Rumah 45');
+(1, 'SMP 2');
 
 -- --------------------------------------------------------
 
@@ -148,10 +123,7 @@ CREATE TABLE `tb_merk` (
 
 INSERT INTO `tb_merk` (`id`, `merk`) VALUES
 (1, 'Daikin'),
-(2, 'Asus'),
-(4, 'Tp Link'),
-(5, 'Logitech'),
-(6, 'Supra');
+(2, 'Daikin');
 
 -- --------------------------------------------------------
 
@@ -169,18 +141,7 @@ CREATE TABLE `tb_ruang` (
 --
 
 INSERT INTO `tb_ruang` (`id`, `ruang`) VALUES
-(3, 'Ruang Pendidikan'),
-(4, 'Ruang Marketing'),
-(5, 'Ruang Sekretariat'),
-(6, 'Ruang Sarpras'),
-(7, 'Ruang Keuangan'),
-(8, 'Ruang SDM'),
-(9, 'Ruang Kepala Sekolah'),
-(10, 'Ruang Kelas'),
-(11, 'Ruang Lab'),
-(12, 'Ruang Guru'),
-(13, 'Ruang TU'),
-(14, 'Ruang Server');
+(1, '7D');
 
 -- --------------------------------------------------------
 
@@ -206,8 +167,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `email`, `no_telp`, `role`, `password`, `created_at`, `foto`, `is_active`) VALUES
-(14, 'doni', 'doni', 'IT', '-', 'admin', '$2y$10$TLWyJK2HZOvzuf6DFTqXce4Gim6MgwGpjCsd61QDUHsauXm8a87Sq', 1686095893, 'user.png', 1),
-(37, 'maytha', 'mayta', 'Staff Sarpras', '-', 'admin', '$2y$10$.nZXe.Zg17.oGWXqZTIV8.Cso22xyJFO0PEUgu/lyY/wJAtkO8oH2', 1698891730, 'user.png', 1);
+(14, 'doni', 'doni', 'IT', '-', 'admin', '$2y$10$TLWyJK2HZOvzuf6DFTqXce4Gim6MgwGpjCsd61QDUHsauXm8a87Sq', 1686095893, 'user.png', 1);
 
 --
 -- Indexes for dumped tables
@@ -263,43 +223,43 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `tb_aset`
 --
 ALTER TABLE `tb_aset`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_disposal`
 --
 ALTER TABLE `tb_disposal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_lokasi`
 --
 ALTER TABLE `tb_lokasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_merk`
 --
 ALTER TABLE `tb_merk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_ruang`
 --
 ALTER TABLE `tb_ruang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

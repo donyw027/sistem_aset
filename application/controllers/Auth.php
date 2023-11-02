@@ -26,7 +26,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Login | Sistem Anggaran';
+            $data['title'] = 'Login | Sistem Aset';
             $this->template->load('templates/auth', 'auth/login', $data);
         } else {
             $input = $this->input->post(null, true);

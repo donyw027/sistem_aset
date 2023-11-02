@@ -17,16 +17,15 @@ class Dashboard extends CI_Controller
 
 
         $role = $this->session->userdata('login_session')['role'];
-        
-        if (!is_admin()==true) {
-            # code...
-        $data['input_saldo'] = $this->admin->get("input_saldo_".$role);
 
-        }
-        
+
+        $data['kategori'] = $this->admin->get("tb_kategori");
+
+
+
 
         $data['user'] = $this->admin->count('user');
-        
+
 
         $this->template->load('templates/dashboard', 'dashboard', $data);
     }

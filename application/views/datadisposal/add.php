@@ -9,7 +9,7 @@
                         </h4>
                     </div>
                     <div class="col-auto">
-                        <a href="<?= base_url('user') ?>" class="btn btn-sm btn-secondary btn-icon-split">
+                        <a href="<?= base_url('datadisposal') ?>" class="btn btn-sm btn-secondary btn-icon-split">
                             <span class="icon">
                                 <i class="fa fa-arrow-left"></i>
                             </span>
@@ -25,10 +25,10 @@
                 <?= form_open(); ?>
 
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="tgl_perolehan">tgl_perolehan</label>
+                    <label class="col-md-4 text-md-right" for="tgl_disposal">tgl_disposal</label>
                     <div class="col-md-6">
-                        <input value="<?= set_value('tgl_perolehan'); ?>" type="date" id="tgl_perolehan" name="tgl_perolehan" class="form-control" placeholder="tgl_perolehan">
-                        <?= form_error('tgl_perolehan', '<span class="text-danger small">', '</span>'); ?>
+                        <input value="<?= set_value('tgl_disposal'); ?>" type="date" id="tgl_disposal" name="tgl_disposal" class="form-control" placeholder="tgl_disposal">
+                        <?= form_error('tgl_disposal', '<span class="text-danger small">', '</span>'); ?>
                     </div>
                 </div>
 
@@ -70,15 +70,14 @@
                     </div>
                 </div>
 
-
-
                 <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="kondisi">kondisi</label>
+                    <label class="col-md-4 text-md-right" for="no_seri">no_seri</label>
                     <div class="col-md-6">
-                        <input value="<?= set_value('kondisi'); ?>" type="text" id="kondisi" name="kondisi" class="form-control" placeholder="kondisi">
-                        <?= form_error('kondisi', '<span class="text-danger small">', '</span>'); ?>
+                        <input value="<?= set_value('no_seri'); ?>" type="text" id="no_seri" name="no_seri" class="form-control" placeholder="no_seri">
+                        <?= form_error('no_seri', '<span class="text-danger small">', '</span>'); ?>
                     </div>
                 </div>
+
 
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="lokasi">lokasi</label>

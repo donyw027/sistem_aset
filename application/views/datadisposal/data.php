@@ -4,13 +4,13 @@
         <div class="row">
             <div class="col">
                 <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                    Data aset
+                    Data Disposal Aset
                 </h4>
                 <?php if (is_admin() == true) { ?>
                     <br>
                     <?php //$this->session->flashdata('pesan'); 
                     ?>
-                    <form method="get" action="<?= base_url() ?>dataaset/">
+                    <form method="get" action="<?= base_url() ?>datadisposal/">
                         <div class="row" style="margin-left: 20px;">
                             <label>Pilih Unit</label>
                             <div class="col-3">
@@ -37,15 +37,12 @@
                 <?php } ?>
             </div>
             <div class="col-auto">
-                <a href="<?= base_url('dataaset/add') ?>" class="btn btn-sm btn-primary btn-icon-split">
+                <a href="<?= base_url('datadisposal/add') ?>" class="btn btn-sm btn-primary btn-icon-split">
                     <span class="icon">
                         <i class="fa fa-user-plus"></i>
                     </span>
-
-
-
                     <span class="text">
-                        Tambah Aset
+                        Tambah Disposal Aset
                     </span>
                 </a>
             </div>
@@ -56,14 +53,12 @@
             <thead>
                 <tr>
                     <th width="30">No.</th>
-
-                    <!-- <th>qr</th> -->
+                    <th>Tgl Disposal</th>
                     <th>Jenis Aset</th>
                     <th>Nama Aset</th>
-                    <th>Jumlah Aset</th>
+                    <th>Jumlah Unit</th>
                     <th>Merk</th>
-                    <th>Kondisi</th>
-                    <th>Tgl Perolehan</th>
+                    <th>No Seri</th>
                     <th>Lokasi</th>
                     <th>Ruang</th>
                     <th>Kategori</th>
@@ -73,39 +68,35 @@
             </thead>
             <tbody>
                 <?php
-                $kodenya = 'doni';
                 $no = 1;
-                if ($dataaset) :
-                    foreach ($dataaset as $dataasett) :
+                if ($datadisposal) :
+                    foreach ($datadisposal as $datadisposalt) :
                 ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <!-- <td><img src="<?php echo site_url('dataaset/qrcode' . $kodenya) ?>" alt=""></td> -->
-                            <td><?= $dataasett['jenis_aset']; ?></td>
-                            <td><?= $dataasett['nama_aset']; ?></td>
-                            <td><?= $dataasett['jumlah_unit']; ?></td>
-                            <td><?= $dataasett['merk']; ?></td>
-                            <td><?= $dataasett['kondisi']; ?></td>
-                            <td><?= $dataasett['tgl_perolehan']; ?></td>
+                            <td><?= $datadisposalt['tgl_disposal']; ?></td>
 
-                            <td><?= $dataasett['lokasi']; ?></td>
-                            <td><?= $dataasett['ruang']; ?></td>
-                            <td><?= $dataasett['kategori']; ?></td>
-                            <td><?= $dataasett['keterangan']; ?></td>
-
+                            <td><?= $datadisposalt['jenis_aset']; ?></td>
+                            <td><?= $datadisposalt['nama_aset']; ?></td>
+                            <td><?= $datadisposalt['jumlah_unit']; ?></td>
+                            <td><?= $datadisposalt['merk']; ?></td>
+                            <td><?= $datadisposalt['no_seri']; ?></td>
+                            <td><?= $datadisposalt['lokasi']; ?></td>
+                            <td><?= $datadisposalt['ruang']; ?></td>
+                            <td><?= $datadisposalt['kategori']; ?></td>
+                            <td><?= $datadisposalt['keterangan']; ?></td>
                             <td>
-                                <a href="<?= base_url('dataaset/edit/') . $dataasett['id'] ?>" class="btn btn-circle btn-sm btn-warning"><i class="fa fa-fw fa-edit"></i></a>
 
-                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('dataaset/delete/') . $dataasett['id'] ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                                <a href="<?= base_url('datadisposal/edit/') . $datadisposalt['id'] ?>" class="btn btn-circle btn-sm btn-warning"><i class="fa fa-fw fa-edit"></i></a>
 
-                                <a href="<?= base_url('dataaset/qrcode/') . $dataasett['id'], $dataasett['nama_aset'], $dataasett['lokasi'] . $dataasett['ruang'] . "Aset Yayasan Diannanda"  ?>" class="btn btn-circle btn-sm btn-warning" target="_blank"><i class=" fa fa-fw fa-print"></i></a>
+                                <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('datadisposal/delete/') . $datadisposalt['id'] ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
+                                <a href="<?= base_url('datadisposal/edit/') . $datadisposalt['id'] ?>" class="btn btn-circle btn-sm btn-warning"><i class="fa fa-fw fa-print"></i></a>
                             </td>
-
                         </tr>
                     <?php endforeach;
                 else : ?>
                     <tr>
-                        <td colspan="12" class="text-center">Silahkan tambahkan Aset baru</td>
+                        <td colspan="11" class="text-center">Silahkan tambahkan Aset baru</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
