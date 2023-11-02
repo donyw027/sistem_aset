@@ -18,12 +18,13 @@
                     <th width="30">No.</th>
 
                     <!-- <th>qr</th> -->
+                    <th>Tgl Perolehan</th>
+
                     <th>Jenis Aset</th>
                     <th>Nama Aset</th>
                     <th>Jumlah Aset</th>
                     <th>Merk</th>
                     <th>Kondisi</th>
-                    <th>Tgl Perolehan</th>
                     <th>Lokasi</th>
                     <th>Ruang</th>
                     <th>Kategori</th>
@@ -43,12 +44,12 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <!-- <td><img src="<?php echo site_url('dataaset/qrcode' . $kodenya) ?>" alt=""></td> -->
+                            <td><?= date('d-m-Y', strtotime($dataasett['tgl_perolehan'])); ?></td>
                             <td><?= $dataasett['jenis_aset']; ?></td>
                             <td><?= $dataasett['nama_aset']; ?></td>
                             <td><?= $dataasett['jumlah_unit']; ?></td>
                             <td><?= $dataasett['merk']; ?></td>
                             <td><?= $dataasett['kondisi']; ?></td>
-                            <td><?= $dataasett['tgl_perolehan']; ?></td>
 
                             <td><?= $dataasett['lokasi']; ?></td>
                             <td><?= $dataasett['ruang']; ?></td>

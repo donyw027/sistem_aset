@@ -18,7 +18,7 @@
 
 <body>
     <center>
-        <p><b>Aset Yayasan Diannanda</b></p>
+        <h3>Aset Yayasan Diannanda</h3>
         <img src="<?= $urlqrcode; ?>" alt="">
         <p>&copy; IT Yayasan Diannanda 2023</p>
     </center>

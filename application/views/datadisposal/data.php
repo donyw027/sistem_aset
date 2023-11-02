@@ -74,8 +74,7 @@
                 ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $datadisposalt['tgl_disposal']; ?></td>
-
+                            <td><?= date('d-m-Y', strtotime($datadisposalt['tgl_disposal'])); ?></td>
                             <td><?= $datadisposalt['jenis_aset']; ?></td>
                             <td><?= $datadisposalt['nama_aset']; ?></td>
                             <td><?= $datadisposalt['jumlah_unit']; ?></td>
