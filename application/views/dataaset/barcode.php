@@ -18,9 +18,14 @@
 
 <body>
     <center>
-        <h3>Aset Yayasan Diannanda</h3>
-        <img src="<?= $urlqrcode; ?>" alt="">
-        <p>&copy; IT Yayasan Diannanda 2023</p>
+        <p style="margin: 0;">
+            <font style="font-size: 6pt;">Aset Yayasan Diannanda</font>
+        </p>
+        <img src="<?= $urlqrcode; ?>" alt="" width="80" height="80" style="margin-bottom: 0;">
+        <p style=" margin-top: 0;">
+            <font style="font-size: 6pt;">&copy; IT Yayasan Diannanda 2023</font>
+        </p>
+
     </center>
 </body>
 
