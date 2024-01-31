@@ -32,11 +32,22 @@
                     </div>
                 </div>
 
-                <div class="row form-group">
+                <!-- <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="jenis_aset">jenis_aset</label>
                     <div class="col-md-6">
                         <input value="<?= set_value('jenis_aset'); ?>" type="text" id="jenis_aset" name="jenis_aset" class="form-control" placeholder="jenis_aset">
                         <?= form_error('jenis_aset', '<span class="text-danger small">', '</span>'); ?>
+                    <vscode-file://vscode-app/c:/Users/Server%20Grogol/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html/div>
+                </div> -->
+                <div class="row form-group">
+                    <label class="col-md-4 text-md-right" for="jenis_aset">jenis_aset</label>
+                    <div class="col-md-6">
+                        <select class="form-control" name="jenis_aset">
+                            <option>--Pilih jenis_aset--</option>
+                            <option value="Dana Bos">Dana Bos</option>
+                            <option value="Yayasan">Yayasan</option>
+
+                        </select>
                     </div>
                 </div>
 
@@ -72,11 +83,22 @@
 
 
 
-                <div class="row form-group">
+                <!-- <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="kondisi">kondisi</label>
                     <div class="col-md-6">
                         <input value="<?= set_value('kondisi'); ?>" type="text" id="kondisi" name="kondisi" class="form-control" placeholder="kondisi">
                         <?= form_error('kondisi', '<span class="text-danger small">', '</span>'); ?>
+                    </div>
+                </div> -->
+                <div class="row form-group">
+                    <label class="col-md-4 text-md-right" for="kondisi">kondisi</label>
+                    <div class="col-md-6">
+                        <select class="form-control" name="kondisi">
+                            <option>--Pilih kondisi--</option>
+                            <option value="Layak">Layak</option>
+                            <option value="Tidak Layak">Tidak Layak</option>
+
+                        </select>
                     </div>
                 </div>
 
