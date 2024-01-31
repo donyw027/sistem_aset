@@ -13,10 +13,24 @@ function is_admin()
 {
     $ci = get_instance();
     $role = $ci->session->userdata('login_session')['role'];
-    
+
     $status = true;
 
     if ($role != 'admin') {
+        $status = false;
+    }
+
+    return $status;
+}
+
+function is_admin1()
+{
+    $ci = get_instance();
+    $role = $ci->session->userdata('login_session')['email'];
+
+    $status = true;
+
+    if ($role != 'IT') {
         $status = false;
     }
 

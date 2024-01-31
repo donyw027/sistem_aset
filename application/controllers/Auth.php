@@ -43,6 +43,7 @@ class Auth extends CI_Controller
                         $userdata = [
                             'user'  => $user_db['id_user'],
                             'nama'  => $user_db['nama'],
+                            'email'  => $user_db['email'],
                             'role'  => $user_db['role'],
                             'timestamp' => time()
                         ];

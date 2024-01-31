@@ -164,7 +164,7 @@
 
 
 
-            <?php if (is_admin()) : ?>
+            <?php if (is_admin1()) : ?>
 
                 <hr class="sidebar-divider">
 
