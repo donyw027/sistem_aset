@@ -39,6 +39,13 @@
                     </div>
                 </div>
                 <div class="row form-group">
+                    <label class="col-md-4 text-md-right" for="no_barcode">no_barcode</label>
+                    <div class="col-md-6">
+                        <input value="<?= set_value('no_barcode', $dataaset['no_barcode']); ?>" type="text" id="no_barcode" name="no_barcode" class="form-control" placeholder="no_barcode">
+                        <?= form_error('no_barcode', '<span class="text-danger small">', '</span>'); ?>
+                    </div>
+                </div>
+                <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="nama_aset">nama_aset</label>
                     <div class="col-md-6">
                         <input value="<?= set_value('nama_aset', $dataaset['nama_aset']); ?>" type="text" id="nama_aset" name="nama_aset" class="form-control" placeholder="nama_aset">

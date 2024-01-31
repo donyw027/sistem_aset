@@ -61,6 +61,8 @@
                     <th>Tgl Perolehan</th>
 
                     <th>Jenis Aset</th>
+                    <th>No Barcode</th>
+
                     <th>Nama Aset</th>
                     <th>Jumlah Aset</th>
                     <th>Merk</th>
@@ -87,6 +89,7 @@
                             <td><?= date('d-m-Y', strtotime($dataasett['tgl_perolehan'])); ?></td>
 
                             <td><?= $dataasett['jenis_aset']; ?></td>
+                            <td><?= $dataasett['no_barcode']; ?></td>
                             <td><?= $dataasett['nama_aset']; ?></td>
                             <td><?= $dataasett['jumlah_unit']; ?></td>
                             <td><?= $dataasett['merk']; ?></td>
@@ -102,7 +105,7 @@
 
                                 <a onclick="return confirm('Yakin ingin menghapus data?')" href="<?= base_url('dataaset/delete/') . $dataasett['id'] ?>" class="btn btn-circle btn-sm btn-danger"><i class="fa fa-fw fa-trash"></i></a>
 
-                                <a href="<?= base_url('dataaset/printqrcode/') .  $dataasett['nama_aset'] . " || " . $dataasett['lokasi'] . " || " . $dataasett['ruang'] . " || " . $dataasett['tgl_perolehan']  ?>" class="btn btn-circle btn-sm btn-warning" target="_blank"><i class=" fa fa-fw fa-print"></i></a>
+                                <a href="<?= base_url('dataaset/printqrcode/') .  $dataasett['nama_aset'] . " || " .  $dataasett['no_barcode'] . " || " . $dataasett['lokasi'] . " || " . $dataasett['ruang'] . " || " . $dataasett['tgl_perolehan']  ?>" class="btn btn-circle btn-sm btn-warning" target="_blank"><i class=" fa fa-fw fa-print"></i></a>
                             </td>
 
                         </tr>

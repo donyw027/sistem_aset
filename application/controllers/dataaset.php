@@ -79,6 +79,7 @@ class Dataaset extends CI_Controller
             $input = $this->input->post(null, true);
             $input_data = [
                 'jenis_aset'          => $input['jenis_aset'],
+                'no_barcode'          => $input['no_barcode'],
                 'nama_aset'          => $input['nama_aset'],
                 'jumlah_unit'          => $input['jumlah_unit'],
                 'merk'      => $input['merk'],
@@ -117,6 +118,7 @@ class Dataaset extends CI_Controller
             $input = $this->input->post(null, true);
             $input_data = [
                 'jenis_aset'          => $input['jenis_aset'],
+                'no_barcode'          => $input['no_barcode'],
                 'nama_aset'          => $input['nama_aset'],
                 'jumlah_unit'          => $input['jumlah_unit'],
                 'merk'      => $input['merk'],

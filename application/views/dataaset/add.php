@@ -32,13 +32,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="row form-group">
-                    <label class="col-md-4 text-md-right" for="jenis_aset">jenis_aset</label>
-                    <div class="col-md-6">
-                        <input value="<?= set_value('jenis_aset'); ?>" type="text" id="jenis_aset" name="jenis_aset" class="form-control" placeholder="jenis_aset">
-                        <?= form_error('jenis_aset', '<span class="text-danger small">', '</span>'); ?>
-                    <vscode-file://vscode-app/c:/Users/Server%20Grogol/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html/div>
-                </div> -->
+
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="jenis_aset">jenis_aset</label>
                     <div class="col-md-6">
@@ -50,6 +44,16 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="row form-group">
+                    <label class="col-md-4 text-md-right" for="no_barcode">no_barcode</label>
+                    <div class="col-md-6">
+                        <input value="<?= set_value('no_barcode'); ?>" type="text" id="no_barcode" name="no_barcode" class="form-control" placeholder="no_barcode">
+                        <?= form_error('no_barcode', '<span class="text-danger small">', '</span>'); ?>
+                    </div>
+                </div>
+
+
 
                 <div class="row form-group">
                     <label class="col-md-4 text-md-right" for="nama_aset">nama_aset</label>

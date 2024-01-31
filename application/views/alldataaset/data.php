@@ -21,6 +21,7 @@
                     <th>Tgl Perolehan</th>
 
                     <th>Jenis Aset</th>
+                    <th>No Barcode</th>
                     <th>Nama Aset</th>
                     <th>Jumlah Aset</th>
                     <th>Merk</th>
@@ -46,6 +47,7 @@
                             <!-- <td><img src="<?php echo site_url('dataaset/qrcode' . $kodenya) ?>" alt=""></td> -->
                             <td><?= date('d-m-Y', strtotime($dataasett['tgl_perolehan'])); ?></td>
                             <td><?= $dataasett['jenis_aset']; ?></td>
+                            <td><?= $dataasett['no_barcode']; ?></td>
                             <td><?= $dataasett['nama_aset']; ?></td>
                             <td><?= $dataasett['jumlah_unit']; ?></td>
                             <td><?= $dataasett['merk']; ?></td>
